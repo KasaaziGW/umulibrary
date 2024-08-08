@@ -1,0 +1,25 @@
+#bgshadow {
+    box-shadow: 0.5rem 0.5rem #000000, -0.5rem -0.5rem #fd0000;
+}
+hr.hr-text {
+    color: #2c2929;
+    position: relative;
+    border: none;
+    height: 1px;
+    background: #999;
+  }
+  
+hr.hr-text::before {
+    content: attr(data-content);
+    display: inline-block;
+    background: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    color: rgb(255, 0, 0);
+    border-radius: 30rem;
+    padding: 0.2rem 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
