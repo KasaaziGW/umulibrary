@@ -1,21 +1,23 @@
 <?php
-include("sessions.php");
+include("./sessions.php");
 include("./dbconfig.php");
-$update = "UPDATE users SET status = 0 WHERE uid='$id'";
-mysqli_query($conn, $update);
+if ($role == 'admin' || $role == 'librarian') {
+    $updateStaff = "UPDATE staff SET status = 0 WHERE uid='$id'";
+    mysqli_query($conn, $updateStaff);
+    $userlog = "INSERT INTO userlog(uid, role, activity) VALUES ('$id','$role', 'Logged out')";
+    mysqli_query($conn, $userlog);
+} else {
+    $updateUser = "UPDATE users SET status = 0 WHERE uid='$id'";
+    mysqli_query($conn, $updateUser);
+    $userlog = "INSERT INTO userlog(uid, role, activity) VALUES ('$id','$role', 'Logged out')";
+    mysqli_query($conn, $userlog);
+}
 
 // Unset the session variable
-unset($_SESSION['eid']);
-unset($_SESSION['fullname']);
-unset($_SESSION['role']);
-unset($_SESSION['pp']);
-unset($_SESSION['username']);
+unset($_SESSION['user']);
 
 // Destroy the session
 session_destroy();
-// show message upon logging out
-// array_push($messages, "You have been successfully logged out .");
-// array_push($errors, "You have been successfully logged out .");
 
 // Redirect to the index page
 header('Location: ../index.php');

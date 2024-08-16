@@ -1,7 +1,8 @@
+<?php include('./functions.php'); ?>
 <footer class="sticky-footer">
     <div class="container">
         <div class="text-center">
-            <small> Library Inventory System &copy; 2024</small>
+            <small> UMU Library Past Papers System &copy; <?= getCurrentYear(); ?></small>
         </div>
     </div>
 </footer>

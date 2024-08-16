@@ -18,8 +18,8 @@ if (isset($_POST['userlogin'])) {
     }
 
     if (count($errors) == 0) {
-        $password = md5($password);
-        $query = "SELECT * FROM staff WHERE username='$username' AND password='$password'";
+        $hashedPassword = md5($password);
+        $query = "SELECT * FROM staff WHERE username='$username' AND password='$hashedPassword'";
         $result = mysqli_query($conn, $query);
         if (mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
@@ -37,16 +37,49 @@ if (isset($_POST['userlogin'])) {
                 // adding the user's details in the userlog table
                 $userlog = "INSERT INTO userlog(uid, role, activity) VALUES ('$uid','$role', 'Logged in')";
                 mysqli_query($conn, $userlog);
-                $_SESSION['username'] = $username;
-                $_SESSION['fullname'] = $user['fullname'];
-                $_SESSION['role'] = $role;
-                $_SESSION['eid'] = $uid;
-                $_SESSION['pp'] = $user['photo'];
-                $_SESSION['branch'] = $user['branch'];
-                header('location: ./api/index.php');
+                // Store user info in an object
+                $staff = [
+                    'id' => $uid,
+                    'username' => $username,
+                    'name' => $user['fullname'],
+                    'addPassword' => 'No',
+                    'fileName' => $user['photo'],
+                    'role' => $role
+                ];
+                // Encode the user data
+                $encodedUserData = base64_encode(json_encode($staff));
+                // Redirect to index.php with the encoded user data as a parameter
+                header('location: ./api/index.php?data=' . urlencode($encodedUserData));
             }
         } else {
-            array_push($errors, "Wrong username/password combination");
+            $password = md5($password);
+            $query = "SELECT * FROM users WHERE email='$username' AND password='$password'";
+            $result = mysqli_query($conn, $query);
+            if (mysqli_num_rows($result) == 1) {
+                $user = mysqli_fetch_assoc($result);
+                $uid = $user['uid'];
+                $role = "user";
+                // updating the user's login status
+                $update = "UPDATE users SET status=1 WHERE uid='$uid'";
+                mysqli_query($conn, $update);
+                $userlog = "INSERT INTO userlog(uid, role, activity) VALUES ('$uid','$role', 'Logged in')";
+                mysqli_query($conn, $userlog);
+                // Store user info in an object
+                $oldUser = [
+                    'id' => $uid,
+                    'name' => $user['fullname'],
+                    'addPassword' => 'No',
+                    'fileName' => $user['photo'],
+                    'role' => $role
+                ];
+                // Encode the user data
+                $encodedUserData = base64_encode(json_encode($oldUser));
+                // Redirect to index.php with the encoded user data as a parameter
+                header('location: ./api/index.php?data=' . urlencode($encodedUserData));
+            } else {
+                array_push($errors, "Wrong username/password combination!");
+                array_push($errors, "Consider signing in with your umu email and either set or reset your password.");
+            }
         }
     }
 }

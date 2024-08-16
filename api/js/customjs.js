@@ -1,16 +1,4 @@
 $(document).ready(function () {
-  // $("#sellingprice").on("keyup", function () {
-  //   var price = $(this).val();
-  //   var qty = document.querySelector("#quantity").value;
-  //   document.querySelector("#totalPrice").value = price * qty;
-  //   // console.log("Total Price: " + eval(price * qty));
-  // });
-  $("#price").on("keyup", function () {
-    var price = $(this).val();
-    var qty = document.querySelector("#qty").value;
-    document.querySelector("#totalprice").value = price * qty;
-    // console.log("Total Price: " + eval(price * qty));
-  });
   // Event for checking if the passwords match
   $("#confirmpassword").on("keyup", function () {
     var pswd1 = document.querySelector("#password").value;

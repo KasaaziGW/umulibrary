@@ -37,3 +37,9 @@ function getCurrentTime()
 {
     return date('H:i:s'); // H for hour, i for minutes, s for seconds
 }
+
+// function to return the current year 
+function getCurrentYear()
+{
+    return date('Y');
+}

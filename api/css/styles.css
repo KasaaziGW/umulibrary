@@ -1,0 +1,37 @@
+.profile-pic {
+    white-space: nowrap;
+    padding-left: 15px;
+    border-left: 1px solid rgba(120, 130, 140, 0.13);
+  }
+
+  .profile-pic img {
+    width: 30px;
+    border-radius: 100%;
+  }
+
+  .navbar,
+  .navbar-nav,
+  .navbar-sidenav {
+    background-color: maroon;
+    color: white;
+  }
+
+  #exampleAccordion {
+    background-color: rgba(120, 130, 140, 0.4);
+  }
+
+  #nav-item {
+    color: red;
+  }
+  #nav-item:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .navbar-brand {
+    color: white;
+  }
+
+  .sidenav-toggler {
+    background-color: rgba(0, 0, 0, 0.5);
+  }

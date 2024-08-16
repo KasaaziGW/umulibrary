@@ -28,12 +28,7 @@ $loginUrl = $client->createAuthUrl();
                 <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
                     <div class="card border border-light-subtle rounded-3" id="bgshadow">
                         <div class="card-body p-3 p-md-4 p-xl-5">
-                            <!-- <div class="text-center mb-3">
-                                <a href="./index.php">
-                                    <img src="./images/logo.png" alt="Lib system logo" width="100">
-                                </a>
-                            </div> -->
-                            <h1 class="fs-6 fw-normal text-center text-black mb-4" style="margin-top: -18px;">
+                            <h1 class="fs-6 fw-normal text-center text-black mb-4">
                                 For first time users, select the <strong>alternative</strong> login option and sign in with your umu email.
                                 After your first login, you can then login with your email and the password you set upon the first time you logged in.
                             </h1>
@@ -41,6 +36,7 @@ $loginUrl = $client->createAuthUrl();
                                 <?php include('errors.php'); ?>
                                 <?php include('./api/success.php'); ?>
                                 <div class="row gy-2 overflow-hidden">
+
                                     <div class="col-12">
                                         <div class="form-floating mb-3">
                                             <!-- <i class="fa fa-user fa-lg"></i> -->
@@ -59,6 +55,7 @@ $loginUrl = $client->createAuthUrl();
                                             <label for="password" class="form-label">Password</label>
                                         </div>
                                     </div>
+
                                     <div class="col-12">
                                         <div class="d-grid my-3">
                                             <button class="btn btn-primary btn-lg" type="submit" name="userlogin">Sign In</button>
@@ -79,7 +76,6 @@ $loginUrl = $client->createAuthUrl();
                     </div>
                 </div>
             </div>
-        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"></script>
