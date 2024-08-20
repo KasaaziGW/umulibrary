@@ -89,7 +89,7 @@ $messages = array();
           $cuq_result = mysqli_query($conn, $cuq);
           $course_units = mysqli_fetch_assoc($cuq_result);
           // retrieving course_unit names and their total number of past papers in the system
-          $ccuq = "SELECT cu.name AS course_unit_name, COUNT(e.id) AS total_exams FROM course_units cu JOIN course_course_units ccu ON cu.id = ccu.course_unit JOIN exam_course_units ecu ON cu.id = ecu.course_unit_id JOIN exams e ON ecu.exam_id = e.id WHERE ccu.course = '$cid' GROUP BY cu.name ORDER BY cu.name";
+          $ccuq = "SELECT cu.id AS cu_id, cu.name AS course_unit_name, COUNT(e.id) AS total_exams FROM course_units cu JOIN course_course_units ccu ON cu.id = ccu.course_unit JOIN exam_course_units ecu ON cu.id = ecu.course_unit_id JOIN exams e ON ecu.exam_id = e.id WHERE ccu.course = '$cid' GROUP BY cu.name ORDER BY cu.name";
           $ccuq_results = mysqli_query($conn, $ccuq);
         }
         ?>
@@ -131,7 +131,7 @@ $messages = array();
                   <small class="font-light">For <?= $course["c_code"] ?></small>
                 </div>
               </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
+              <a class="card-footer text-white clearfix small z-1" href="./viewpapers.php">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                   <i class="fa fa-angle-right"></i>
@@ -154,7 +154,7 @@ $messages = array();
               echo '<small class="font-light"><strong>' . htmlspecialchars($row['course_unit_name']) . '</strong></small>
                     </div>
               </div>';
-              echo '<a class="card-footer text-white clearfix small z-1" href="./viewexams.php?staff=' . htmlspecialchars($row['course_unit_name']) . '">
+              echo '<a class="card-footer text-white clearfix small z-1" href="./viewpapers.php?cu=' . htmlspecialchars($row['cu_id']) . '-' . urlencode(base64_encode(json_encode(htmlspecialchars($row['course_unit_name'])))) . '-' . htmlspecialchars($row['total_exams']) . '">
                     <span class="float-left">View Details</span>
                     <span class="float-right">
                       <i class="fa fa-angle-right"></i>

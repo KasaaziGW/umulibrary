@@ -42,7 +42,7 @@
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents">
                         <li>
-                            <a class="nav-link" id="nav-item" href="#">
+                            <a class="nav-link" id="nav-item" href="./viewpapers.php">
                                 <i class="fa fa-paperclip" aria-hidden="true"></i>
                                 <span class="nav-link-text">Past Papers</span>
                             </a>

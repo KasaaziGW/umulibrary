@@ -47,7 +47,7 @@ if (isset($_POST['userlogin'])) {
                     'role' => $role
                 ];
                 // Encode the user data
-                $encodedUserData = base64_encode(json_encode($staff));
+                $encodedUserData = base64_encode(json_encode($staff)); // urlencode(base64_encode(json_encode()))
                 // Redirect to index.php with the encoded user data as a parameter
                 header('location: ./api/index.php?data=' . urlencode($encodedUserData));
             }

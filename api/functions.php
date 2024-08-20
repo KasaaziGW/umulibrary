@@ -1,5 +1,6 @@
 <?php
 // function to return the currency formatted with a thousands separator
+// formatCurrency(1000000) == 1,000,000
 function formatCurrency($number)
 {
     $result = '';
@@ -35,7 +36,11 @@ function getCurrentDate()
 // function to return the current time 
 function getCurrentTime()
 {
-    return date('H:i:s'); // H for hour, i for minutes, s for seconds
+    // Set the default time zone to Kampala, Uganda
+    date_default_timezone_set('Africa/Kampala');
+    // return date('H:i:s'); // H for hour, i for minutes, s for seconds
+    // Return the current time in h:i:s A format (12-hour format with AM/PM)
+    return date('h:i:s A');
 }
 
 // function to return the current year 
