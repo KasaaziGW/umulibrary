@@ -104,8 +104,10 @@ function getTime()
             <table class="table table-bordered" id="papersTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
+                  <td>Code</td>
                   <td>Course Unit</td>
-                  <td>Caption</td>
+                  <td>Year</td>
+                  <td>Semester</td>
                   <td>Exam Date</td>
                   <td>Size</td>
                   <td>Download</td>
@@ -157,8 +159,8 @@ function getTime()
           paging: true,
           pageLength: 50,
           lengthMenu: [
-            [50, 100, 200, 300, 500, 1000],
-            [50, 100, 200, 300, 500, 1000],
+            [50, 100, 200, 300, 500],
+            [50, 100, 200, 300, 500],
           ],
           ajax: {
             url: "fetchPapers.php",
@@ -170,10 +172,16 @@ function getTime()
           },
           processing: true,
           columns: [{
+              data: "code"
+            },
+            {
               data: "name"
             },
             {
-              data: "caption"
+              data: "year"
+            },
+            {
+              data: "semester"
             },
             {
               data: "exam_date"

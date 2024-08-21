@@ -25,8 +25,8 @@ if (isset($_POST['saveCourse'])) {
         mysqli_query($conn, $query);
         array_push($messages, "Selected course has successfully been updated.");
     }
-    if ($pg == "index") header("Refresh: 5, URL=./index.php");
-    else header("Refresh: 5, URL=./addCourse.php");
+    if ($pg == "index") header("Refresh: 3, URL=./index.php");
+    else header("Refresh: 3, URL=./addCourse.php");
 }
 
 $conn->close();
