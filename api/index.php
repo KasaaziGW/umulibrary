@@ -22,20 +22,7 @@ $messages = array();
   <meta name="description" content="">
   <meta name="author" content="">
   <title>Dashboard</title>
-  <!-- Bootstrap core CSS-->
-  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-  <!-- Custom fonts for this template-->
-  <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-  <!-- Page level plugin CSS-->
-  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> -->
 
-  <!-- <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
-
-  <!-- Custom styles for this template-->
-  <!-- <link href="css/sb-admin.css" rel="stylesheet"> -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -84,7 +71,7 @@ $messages = array();
         }
         if (!empty($cid)) {
           // retrieving the user's selected course
-          $cq = "SELECT c.name AS c_name, c.code AS c_code FROM courses c JOIN users_course uc ON c.id = uc.cid";
+          $cq = "SELECT c.name AS c_name, c.code AS c_code FROM courses c JOIN users_course uc ON c.id = uc.cid WHERE c.id = $cid";
           $cd_results = mysqli_query($conn, $cq);
           $course = mysqli_fetch_assoc($cd_results);
           // determining the total number of course units for the user's course
@@ -185,24 +172,6 @@ $messages = array();
   <!-- Logout -->
   <?php include('./passwordModal.php'); ?>
   <!-- Bootstrap core JavaScript-->
-  <!-- Core plugin JavaScript-->
-  <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
-  <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-  <!-- <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
-
-  <!-- Page level plugin JavaScript-->
-  <!-- <script src="vendor/chart.js/Chart.min.js"></script>
-  <script src="vendor/datatables/jquery.dataTables.js"></script>
-  <script src="vendor/datatables/dataTables.bootstrap4.js"></script> -->
-  <!-- Custom scripts for all pages-->
-  <!-- <script src="js/sb-admin.min.js"></script> -->
-  <!-- Custom scripts for this page-->
-  <!-- <script src="js/sb-admin-datatables.min.js"></script>
-  <script src="js/customjs.js"></script> -->
-
-  <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
-  <!-- Include Select2 JS -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

@@ -13,7 +13,7 @@
                         <div class="form-floating mb-3">
                             <input type="password" class="form-control" name="password" id="password" autocomplete="off" placeholder="Password goes here" required>
                             <label for="password" class="form-label">New Password</label>
-                            <input type="text" class="form-control" id="email" name="email" readonly value="<?php if (isset($user['email'])) echo $user['email'] ?>" hidden>
+                            <input type="text" class="form-control" id="email" name="email" readonly value="<?php echo $email; ?>" hidden>
                         </div>
                     </div>
                     <div class="col-12">

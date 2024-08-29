@@ -12,23 +12,23 @@
                 </a>
             </li>
             <?php if ($role == 'admin') : ?>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Uploads">
                     <a class="nav-link nav-link-collapse collapsed" id="nav-item" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                         <!-- <i class="fa fa-fw fa-wrench"></i> -->
                         <i class="fa fa-product-hunt" aria-hidden="true"></i>
-                        <span class="nav-link-text">Inventory</span>
+                        <span class="nav-link-text">Uploads</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents">
                         <li>
-                            <a class="nav-link" id="nav-item" href="import.php">
+                            <a class="nav-link" id="nav-item" href="addpapers.php">
                                 <i class="fa fa-plus" aria-hidden="true"></i>
-                                <span class="nav-link-text">Import</span>
+                                <span class="nav-link-text">Past Papers</span>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" id="nav-item" href="viewinventory.php">
+                            <a class="nav-link" id="nav-item" href="#">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
-                                <span class="nav-link-text">View</span>
+                                <span class="nav-link-text">Dissertations</span>
                             </a>
                         </li>
                     </ul>

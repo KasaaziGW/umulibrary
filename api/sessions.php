@@ -6,6 +6,7 @@ if (isset($_SESSION['user'])) {
     $picName = $user['fileName'];
     $role = $user['role'];
     $id = $user['id'];
+    if (isset($user['email'])) $email = $user['email'];
 } else {
     header('location: ../index.php');
 }

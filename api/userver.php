@@ -25,7 +25,7 @@ if (isset($_POST['saveDetails'])) {
 
     // first check the database to make sure 
     // a user does not already exist with the same username and/or email
-    $user_check_query = "SELECT * FROM users WHERE username='$username' LIMIT 1";
+    $user_check_query = "SELECT * FROM staff WHERE username='$username' LIMIT 1";
     $result = mysqli_query($conn, $user_check_query);
     $user = mysqli_fetch_assoc($result);
 
@@ -59,7 +59,7 @@ if (isset($_POST['saveDetails'])) {
     // Finally, register user if there are no errors in the form
     if (count($errors) == 0) {
         $password = md5($password_1); //encrypt the password before saving in the database
-        $query = "INSERT INTO users (fullname, username, branch, password, photo, role) VALUES('$fullname', '$username', '$branch','$password', '$image', '$role')";
+        $query = "INSERT INTO staff (fullname, username, branch, password, photo, role) VALUES('$fullname', '$username', '$branch','$password', '$image', '$role')";
         mysqli_query($conn, $query);
         array_push($messages, "Account successfully created.");
         header("Refresh: 5, URL=./register.php");
@@ -116,10 +116,10 @@ if (isset($_POST['updateDetails'])) {
         // Update the staff record in the database
         if (!empty($image)) {
             // If a new image was uploaded, update the image field
-            $query = "UPDATE users SET fullname = '$fullname', username = '$username', branch = '$branch', photo = '$image', role = '$role'";
+            $query = "UPDATE staff SET fullname = '$fullname', username = '$username', branch = '$branch', photo = '$image', role = '$role'";
         } else {
             // If no new image was uploaded, update only the name
-            $query = "UPDATE users SET fullname = '$fullname', username = '$username', branch = '$branch', role = '$role'";
+            $query = "UPDATE staff SET fullname = '$fullname', username = '$username', branch = '$branch', role = '$role'";
         }
         if (!empty($password_1)) {
             $query .= ", password = '$password'";
@@ -135,7 +135,7 @@ if (isset($_POST['updateDetails'])) {
         }
 
         // redirecting to the 'viewusers' page
-        header("Refresh: 5; URL=./viewusers.php");
+        header("Refresh: 0; URL=./viewusers.php");
         // mysqli_query($conn, $query);
         // header('location: ./viewusers.php');
     }

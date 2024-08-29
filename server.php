@@ -65,8 +65,10 @@ if (isset($_POST['userlogin'])) {
                 $userlog = "INSERT INTO userlog(uid, role, activity) VALUES ('$uid','$role', 'Logged in')";
                 mysqli_query($conn, $userlog);
                 // Store user info in an object
+                // 81dc9bdb52d04dc20036dbd8313ed055
                 $oldUser = [
                     'id' => $uid,
+                    'email' => $username,
                     'name' => $user['fullname'],
                     'addPassword' => 'No',
                     'fileName' => $user['photo'],
