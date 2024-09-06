@@ -9,7 +9,7 @@ if (isset($_GET['data'])) {
 }
 include('./sessions.php');
 // Suppress errors
-error_reporting(0);
+// error_reporting(0);
 $messages = array();
 ?>
 <!DOCTYPE html>
@@ -61,6 +61,82 @@ $messages = array();
 
       <div class="row">
 
+        <?php if ($role == 'admin'): ?>
+          <?php
+          include('./dbconfig.php');
+          // determining the total number of courses
+          $coursesqry = "SELECT DISTINCT COUNT(name) AS total FROM courses";
+          $courses_result = mysqli_query($conn, $coursesqry);
+          $courses = mysqli_fetch_assoc($courses_result);
+          // determining the total number of course units
+          $cuqry = "SELECT DISTINCT COUNT(name) AS total FROM course_units";
+          $cu_result = mysqli_query($conn, $cuqry);
+          $cu = mysqli_fetch_assoc($cu_result);
+          // determining the total number of users
+          $userqry = "SELECT COUNT(*) AS total FROM users";
+          $user_result = mysqli_query($conn, $userqry);
+          $users = mysqli_fetch_assoc($user_result);
+          ?>
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-primary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <div class="mr-5 text-center">
+                  <h5 class="mb-0 mt-1"><strong><?= $courses["total"] ?></strong></h5>
+                  <small class="font-light">Total Courses</small><br>
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-secondary o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fa fa-pencil" aria-hidden="true"></i>
+                </div>
+                <div class="mr-5 text-center">
+                  <h5 class="mb-0 mt-1"><strong><?= $cu["total"] ?></strong></h5>
+                  <small class="font-light">Total Course Units</small><br>
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fa fa-users" aria-hidden="true"></i>
+                </div>
+                <div class="mr-5 text-center">
+                  <h5 class="mb-0 mt-1"><strong><?= $users["total"] ?></strong></h5>
+                  <small class="font-light">Total Users</small><br>
+                </div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fa fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        <?php endif ?>
         <?php
         if ($role == 'user') {
           include('./dbconfig.php');
@@ -130,7 +206,6 @@ $messages = array();
             </div>
           </div>
 
-          <!-- displaying staff and their verified items -->
           <?php
           if ($ccuq_results->num_rows > 0) {
             // Loop through the results and display them

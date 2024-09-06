@@ -34,7 +34,7 @@
                     </ul>
                 </li>
             <?php else : ?>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Inventory">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Library">
                     <a class="nav-link nav-link-collapse collapsed" id="nav-item" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                         <!-- <i class="fa fa-fw fa-wrench"></i> -->
                         <i class="fa fa-product-hunt" aria-hidden="true"></i>
@@ -58,26 +58,38 @@
             <?php endif ?>
 
             <?php if ($role == 'admin') : ?>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Reports">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Course Management">
                     <a class="nav-link nav-link-collapse collapsed" id="nav-item" data-toggle="collapse" href="#collapseComponents4" data-parent="#exampleAccordion">
                         <!-- <i class="fa fa-fw fa-wrench"></i> -->
                         <i class="fa fa-bar-chart" aria-hidden="true"></i>
-                        <span class="nav-link-text">Reports</span>
+                        <span class="nav-link-text">Course Management</span>
                     </a>
                     <ul class="sidenav-second-level collapse" id="collapseComponents4">
                         <li>
-                            <a class="nav-link" id="nav-item" href="viewverified.php">
-                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                <span class="nav-link-text">Verified</span>
+                            <a class="nav-link" id="nav-item" href="newcourse.php">
+                                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                <span class="nav-link-text">Add Course</span>
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" id="nav-item" href="viewpending.php">
+                            <a class="nav-link" id="nav-item" href="addcourseunit.php">
+                                <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+                                <span class="nav-link-text">Add Course Unit</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-link" id="nav-item" href="viewcourses.php">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
-                                <span class="nav-link-text">Pending</span>
+                                <span class="nav-link-text">View Courses</span>
                             </a>
                         </li>
                     </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Course Update">
+                    <a class="nav-link" id="nav-item" href="coursedetails.php">
+                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        <span class="nav-link-text">Edit Semester/Year</span>
+                    </a>
                 </li>
             <?php endif ?>
 

@@ -1,7 +1,6 @@
 <?php
 include('sessions.php');
 include('userver.php');
-include('functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +44,6 @@ include('functions.php');
       </nav>
       <!-- Users DataTables Card-->
       <div class="card mb-3">
-        <?php include('success.php'); ?>
         <div class="card-header">
           <i class="fa fa-table"></i> All Users
         </div>
@@ -122,7 +120,6 @@ include('functions.php');
             </table>
           </div>
         </div>
-        <!-- <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div> -->
       </div>
     </div>
     <!-- /.container-fluid-->
@@ -149,7 +146,6 @@ include('functions.php');
     <script src="js/sb-admin.min.js"></script>
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
-  </div>
 </body>
 
 </html>
