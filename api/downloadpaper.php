@@ -23,6 +23,7 @@ if (isset($_GET['doc'])) {
             echo "This won't be reached";
         } else {
             echo "File not found!";
+            echo "<br> $filename";
         }
     } else {
         echo "Invalid file ID!";

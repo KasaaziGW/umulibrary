@@ -120,21 +120,21 @@ include('pserver.php');
                     <option value="Lubaga">Lubaga</option>
                   </select>
                 </span>
-                <span class="ms-2 mb-3 col-sm">
-                  <input type="datetime" id="datepicker" placeholder="mm/dd/yyyy" date_format="mm/dd/yyyy">
+                <span class="input-group ms-2 mb-3 col-sm">
+                  <label class="input-group-text" for="datepicker">Exam Date</label>
+                  <input type="datetime" id="datepicker" name="exam_date" placeholder="mm/dd/yyyy" date_format="mm/dd/yyyy" required>
                 </span>
               </div>
 
               <div class="row g-2">
-                <div class="ms-2 mb-3 col-sm">
-                  <!-- <span for="date">Exam Date</span> -->
-                  <input class="form-control form-control-lg" id="formFileLg" type="file" id="date" />
-                </div>
+                <span class="input-group ms-2 mb-3 col-sm">
+                  <label class="input-group-text" for="formFileLg">Select exam</label>
+                  <input class="form-control form-control-lg" id="formFileLg" name="exam" type="file" required />
               </div>
-              <div class="col-12">
-                <div class="d-grid my-3">
-                  <button class="btn btn-primary btn-lg" type="submit" name="saveDetails">Upload Exam</button>
-                </div>
+            </div>
+            <div class="col-12">
+              <div class="d-grid my-3">
+                <button class="btn btn-primary btn-lg" type="submit" name="saveDetails">Upload Exam</button>
               </div>
             </div>
           </form>
@@ -144,7 +144,9 @@ include('pserver.php');
           <?php include('success.php'); ?>
         </div>
       </div>
+
     </div>
+  </div>
   </div>
   <!-- /.container-fluid-->
   <!-- /.content-wrapper-->

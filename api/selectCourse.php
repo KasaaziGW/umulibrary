@@ -11,7 +11,7 @@ include('cserver.php');
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Add Course</title>
+  <title>Select Course</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -41,13 +41,13 @@ include('cserver.php');
           <li class="breadcrumb-item">
             <a href="index.php">Dashboard</a>
           </li>
-          <li class="breadcrumb-item active">Add Course Page</li>
+          <li class="breadcrumb-item active">Select Course Page</li>
         </ol>
       </nav>
       <div class="container">
         <?php include('success.php'); ?>
         <div class="col-md-8">
-          <form method="POST" action="addCourse.php">
+          <form method="POST" action="selectCourse.php">
             <div class="row gy-2 overflow-hidden">
               <div class="input-group ms-2 mb-3">
                 <select class="form-control" id="courseSelect" name="course" style="width: 100%;" required>

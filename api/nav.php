@@ -78,18 +78,25 @@
                             </a>
                         </li>
                         <li>
+                            <a class="nav-link" id="nav-item" href="coursedetails.php">
+                                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                                <span class="nav-link-text">Edit Semester/Year</span>
+                            </a>
+                        </li>
+
+                        <li>
                             <a class="nav-link" id="nav-item" href="viewcourses.php">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                 <span class="nav-link-text">View Courses</span>
                             </a>
                         </li>
+                        <li>
+                            <a class="nav-link" id="nav-item" href="#">
+                                <i class="fa fa-eye" aria-hidden="true"></i>
+                                <span class="nav-link-text">Courses without papers</span>
+                            </a>
+                        </li>
                     </ul>
-                </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Course Update">
-                    <a class="nav-link" id="nav-item" href="coursedetails.php">
-                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        <span class="nav-link-text">Edit Semester/Year</span>
-                    </a>
                 </li>
             <?php endif ?>
 
@@ -132,9 +139,9 @@
                             </a>
                         </li>
                         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Set Course">
-                            <a class="nav-link" id="nav-item" id="nav-item" href="./addCourse.php">
+                            <a class="nav-link" id="nav-item" id="nav-item" href="./selectCourse.php">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
-                                <span class="nav-link-text">Set Course</span>
+                                <span class="nav-link-text">Select Course</span>
                             </a>
                         </li>
                     </ul>

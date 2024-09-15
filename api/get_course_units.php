@@ -12,7 +12,7 @@ $result = $query->get_result();
 // Generate options for the units combo box
 $options = '';
 while ($row = $result->fetch_assoc()) {
-    $options .= '<option value="' . $row['id'] . '">' . $row['name'] . ' - ' . $row['code'] . '</option>';
+    $options .= '<option value="' . $row['id'] . '-' . $row['name'] . '">' . $row['name'] . ' - ' . $row['code'] . '</option>';
 }
 
 // Output options

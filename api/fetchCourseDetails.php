@@ -47,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     while ($row = mysqli_fetch_assoc($result)) {
         $id = $row['id'];
         $data[] = array(
-            'course' => strtoupper($row['course']),
+            'course' => ucwords($row['course']),
             'course_code' => $row['course_code'],
-            'course_unit' => strtoupper($row['course_unit']),
+            'course_unit' => $row['course_unit'],
             'code' => $row['code'],
             'credit_unit' => $row['credit_unit'],
             'year' => $row['year'],

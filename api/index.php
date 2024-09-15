@@ -9,7 +9,7 @@ if (isset($_GET['data'])) {
 }
 include('./sessions.php');
 // Suppress errors
-// error_reporting(0);
+error_reporting(0);
 $messages = array();
 ?>
 <!DOCTYPE html>
@@ -35,6 +35,7 @@ $messages = array();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="./css/styles.css" rel="stylesheet">
   <link rel="icon" href="../images/logo.png">
 
 </head>
@@ -52,7 +53,7 @@ $messages = array();
       <nav style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="./addCourse.php">Dashboard</a>
+            <a href="./index.php">Dashboard</a>
           </li>
           <li class="breadcrumb-item active">My Dashboard</li>
         </ol>

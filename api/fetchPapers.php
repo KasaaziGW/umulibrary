@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $cu_id = $_POST['courseUnit'];
 
     if (empty($search)) {
-        $sql = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id";
-        $sql2 = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id";
+        $sql = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id ORDER BY date";
+        $sql2 = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id ORDER BY date";
         $sql .= " LIMIT {$start}, {$length}";
     } else {
         // $fp = fopen("test_queries_1.txt", "w");
@@ -37,11 +37,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // fprintf($fp, "start: $start");
         // fprintf($fp, "\r\n");
         // fprintf($fp, "length: $length");
-        $sql = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id";
+        $sql = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id ORDER BY date";
         // OR cu.code LIKE '%{$search}%'
         //          OR cu.semester LIKE '%{$search}%'
         //          OR cu.year LIKE '%{$search}%'
-        $sql2 = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id";
+        $sql2 = "SELECT cu.name, cu.code, cu.semester, cu.year, e.filename, e.size, e.date FROM exams e JOIN exam_course_units ecu ON e.id = ecu.exam_id JOIN course_units cu ON ecu.course_unit_id = cu.id WHERE cu.id = $cu_id ORDER BY date";
         // OR cu.code LIKE '%{$search}%'
         //          OR cu.semester LIKE '%{$search}%'
         //          OR cu.year LIKE '%{$search}%'
