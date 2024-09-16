@@ -26,7 +26,7 @@
                             </a>
                         </li>
                         <li>
-                            <a class="nav-link" id="nav-item" href="#">
+                            <a class="nav-link" id="nav-item" href="adddissertations.php">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                 <span class="nav-link-text">Dissertations</span>
                             </a>
@@ -88,12 +88,6 @@
                             <a class="nav-link" id="nav-item" href="viewcourses.php">
                                 <i class="fa fa-eye" aria-hidden="true"></i>
                                 <span class="nav-link-text">View Courses</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="nav-link" id="nav-item" href="#">
-                                <i class="fa fa-eye" aria-hidden="true"></i>
-                                <span class="nav-link-text">Courses without papers</span>
                             </a>
                         </li>
                     </ul>

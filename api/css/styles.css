@@ -35,3 +35,7 @@
   .sidenav-toggler {
     background-color: rgba(0, 0, 0, 0.5);
   }
+
+  input[type="datetime"] {
+    cursor: pointer; /* Change the default cursor to a pointer */
+}
